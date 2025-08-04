@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>6 Month Cake</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #ADD8E6; /* baby blue */
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: cursive;
+    }
+
+    .cake-container {
+      position: relative;
+      text-align: center;
+      transform: scale(1.5); /* bigger cake */
+    }
+
+    .cake {
+      width: 400px;
+      height: 360px;
+      position: relative;
+      background: #ffb6c1;
+      border-radius: 0 0 30px 30px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .layer {
+      position: absolute;
+      width: 100%;
+      height: 120px;
+      background-color: #ffa6c9;
+      border-top: 6px solid #ff69b4;
+    }
+
+    .layer.bottom {
+      bottom: 0;
+      border-radius: 0 0 30px 30px;
+    }
+
+    .layer.middle {
+      bottom: 120px;
+    }
+
+    .layer.top {
+      bottom: 240px;
+      border-radius: 30px 30px 0 0;
+    }
+
+    .ornament {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: white;
+      border-radius: 50%;
+      border: 2px solid #ff69b4;
+    }
+
+    .ornament1 { top: 40px; left: 40px; }
+    .ornament2 { top: 40px; left: 170px; }
+    .ornament3 { top: 40px; left: 310px; }
+    .ornament4 { bottom: 40px; left: 100px; }
+    .ornament5 { bottom: 40px; right: 100px; }
+
+    .candle {
+      position: absolute;
+      width: 20px;
+      height: 60px;
+      background-color: white;
+      top: -70px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .flame {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background-color: orange;
+      border-radius: 50%;
+      top: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 0 12px orange;
+      transition: opacity 0.3s;
+    }
+
+    .flame.off {
+      opacity: 0;
+      box-shadow: none;
+    }
+
+    /* Go Back button style */
+    .go-back-btn {
+      margin-top:200px;
+      padding: 18px 50px;
+      font-size: 26px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+      font-family: cursive;
+      box-shadow: 0 5px 15px rgba(0,123,255,0.4);
+      transition: background-color 0.3s ease;
+    }
+
+    .go-back-btn:hover {
+      background-color: #0056b3;
+    }
+  h1 {
+      font-size: 8em;
+      margin-top: 30px;
+      color: hotpink;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="cake-container">
+    <div class="cake">
+      <div class="layer top"></div>
+      <div class="layer middle"></div>
+      <div class="layer bottom"></div>
+
+      <!-- Ornaments -->
+      <div class="ornament ornament1"></div>
+      <div class="ornament ornament2"></div>
+      <div class="ornament ornament3"></div>
+      <div class="ornament ornament4"></div>
+      <div class="ornament ornament5"></div>
+
+      <!-- Candles -->
+      <div class="candle" style="left: 30px;" onclick="blowCandle('flame1')">
+        <div class="flame" id="flame1"></div>
+      </div>
+      <div class="candle" style="left: 90px;" onclick="blowCandle('flame2')">
+        <div class="flame" id="flame2"></div>
+      </div>
+      <div class="candle" style="left: 150px;" onclick="blowCandle('flame3')">
+        <div class="flame" id="flame3"></div>
+      </div>
+      <div class="candle" style="left: 210px;" onclick="blowCandle('flame4')">
+        <div class="flame" id="flame4"></div>
+      </div>
+      <div class="candle" style="left: 270px;" onclick="blowCandle('flame5')">
+        <div class="flame" id="flame5"></div>
+      </div>
+      <div class="candle" style="left: 330px;" onclick="blowCandle('flame6')">
+        <div class="flame" id="flame6"></div>
+      </div>
+    </div>
+  </div>
+
+  <a href="index.html" class="go-back-btn">Go Back</a>
+
+  <script>
+    function blowCandle(id) {
+      document.getElementById(id).classList.add('off');
+    }
+  </script>
+  
+  <h1>blow them ouuut!!!</h1>
+
+</body>
+</html>
